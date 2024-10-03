@@ -1,1 +1,1 @@
-{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/card/card.tsx","./src/components/loading/loading.tsx","./src/datas/mockdata.ts","./src/hooks/useinfinitescroll.ts","./src/types/mockdata.d.ts","./src/utils/getmockdata.ts"],"version":"5.6.2"}
+{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/card/card.tsx","./src/components/loading/loading.tsx","./src/datas/mockdata.ts","./src/hooks/useinfinitescroll.ts","./src/pages/cardpage.tsx","./src/types/mockdata.d.ts","./src/utils/getmockdata.ts"],"version":"5.6.2"}
