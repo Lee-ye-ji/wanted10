@@ -8,18 +8,11 @@ wanted10/
 │   ├── index.html
 │   └── favicon.ico
 ├── src/
-│   ├── assets/
-│   │   └── images/                # 이미지, 아이콘 등 정적 파일
 │   ├── components/                # 재사용 가능한 컴포넌트
-│   │   ├── Button.tsx
-│   │   └── Header.tsx
+│   │   ├── card
+│   │   └── loading
 │   ├── hooks/                     # 커스텀 훅
-│   │   └── useCustomHook.ts
-│   ├── pages/                     # 페이지 단위 컴포넌트
-│   │   ├── Home.tsx
-│   │   └── About.tsx
-│   ├── styles/                    # 전역 스타일 파일(CSS/SCSS 등)
-│   │   └── global.css
+│   │   └── useInfiniteScroll.ts
 │   ├── types/                     # 전역 타입 정의 파일
 │   │   └── mockData.d.ts
 │   ├── datas/                     # 데이터 정의 파일
@@ -27,7 +20,7 @@ wanted10/
 │   ├── App.tsx                    # 메인 App 컴포넌트
 │   ├── main.tsx                   # 진입점 파일
 │   ├── vite-env.d.ts              # Vite 관련 타입 선언 파일
-│   └── index.css                  # 전역 CSS
+│   └── App.css                    # 전역 CSS
 ├── .gitignore
 ├── index.html                     # 프로젝트 진입 HTML 파일
 ├── package.json
