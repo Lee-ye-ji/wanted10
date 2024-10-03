@@ -1,50 +1,43 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 파일 구조
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+wanted10/
+├── public/
+│   ├── index.html
+│   └── favicon.ico
+├── src/
+│   ├── assets/
+│   │   └── images/                # 이미지, 아이콘 등 정적 파일
+│   ├── components/                # 재사용 가능한 컴포넌트
+│   │   ├── Button.tsx
+│   │   └── Header.tsx
+│   ├── hooks/                     # 커스텀 훅
+│   │   └── useCustomHook.ts
+│   ├── pages/                     # 페이지 단위 컴포넌트
+│   │   ├── Home.tsx
+│   │   └── About.tsx
+│   ├── styles/                    # 전역 스타일 파일(CSS/SCSS 등)
+│   │   └── global.css
+│   ├── types/                     # 전역 타입 정의 파일
+│   │   └── mockData.d.ts
+│   ├── datas/                     # 데이터 정의 파일
+│   │   └── mockData.ts
+│   ├── App.tsx                    # 메인 App 컴포넌트
+│   ├── main.tsx                   # 진입점 파일
+│   ├── vite-env.d.ts              # Vite 관련 타입 선언 파일
+│   └── index.css                  # 전역 CSS
+├── .gitignore
+├── index.html                     # 프로젝트 진입 HTML 파일
+├── package.json
+├── tsconfig.json                  # TypeScript 설정 파일
+├── vite.config.ts                 # Vite 설정 파일
+└── README.md
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## 동작 방식
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+**useState**를 사용하여 현재 화면에 표시되는 데이터와 더 로드할 데이터가 있는지 여부를 관리합니다.
+**useRef**와 **IntersectionObserver**를 사용하여 화면의 마지막 요소가 뷰포트에 들어오면 데이터를 추가로 로드합니다.
+10개의 데이터를 한 번에 로드하며, 모든 데이터를 로드하면 더 이상 로드하지 않습니다.
