@@ -8,7 +8,7 @@ import CardPage from "./pages/CardPage";
 
 function App() {
   return (
-    <Router basename="/wanted10/">
+    <Router basename="/">
       <Routes>
         <Route path="/" element={<CardPage />} />
         {/* 다른 페이지로 이동 시 /로 리다이렉트 */}
