@@ -1,6 +1,13 @@
-# React + TypeScript + Vite
+# 프리온보딩 FE 챌린지 10월 (2024) | 리액트 오픈소스 펼쳐보기
 
-## 참고 자료
+## 구현한 링크
+
+- https://yeji-tomato.github.io/wanted10/
+  ![alt text](image.png)
+
+## 과제 내용
+
+- https://gist.github.com/goldfrosch/034b966075059447efa1c00476849d68
 
 ## 파일 구조
 
@@ -19,6 +26,8 @@ wanted10/
 │   │   └── mockData.d.ts
 │   ├── datas/                     # 데이터 정의 파일
 │   │   └── mockData.ts
+│   ├── pages/                     # 데이터 정의 파일
+│   │   └── CardPage.tsx
 │   ├── App.tsx                    # 메인 App 컴포넌트
 │   ├── main.tsx                   # 진입점 파일
 │   ├── vite-env.d.ts              # Vite 관련 타입 선언 파일

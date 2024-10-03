@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { MockData } from "../types/mockData"; // MockData 타입 가져오기
-import { getMockData } from "../utils/getMockData"; // 데이터 로드 함수 가져오기
+import { getMockData } from "../utils/util"; // 데이터 로드 함수 가져오기
 
 const useInfiniteScroll = () => {
   const [data, setData] = useState<MockData[]>([]); // 렌더링될 데이터 배열
@@ -23,17 +23,15 @@ const useInfiniteScroll = () => {
       // 더 이상 데이터가 없는지 상태 업데이트
       setIsEnd(result.isEnd);
       // 페이지 번호 증가
-      setPageNum((prevPageNum) => prevPageNum + 1);
+      setPageNum((prev) => prev + 1); // 다음 호출에서 증가하도록 설정
     } catch (err) {
       // 데이터 로드 중 오류 발생 시 에러 메시지 설정
       setError("데이터 로드 중 오류가 발생했습니다.");
-    } finally {
     }
   };
 
   useEffect(() => {
-    loadMoreData(); // 컴포넌트가 마운트될 때 초기 데이터 로드
-
+    // loadMoreData();
     // IntersectionObserver를 생성하여 스크롤 시 데이터 로드
     const observer = new IntersectionObserver(
       (entries) => {
@@ -54,9 +52,8 @@ const useInfiniteScroll = () => {
         observer.unobserve(loadingRef.current); // 컴포넌트 언마운트 시 관찰 해제
       }
     };
-  }, [loadingRef, isEnd]); // loadingRef와 isEnd가 변경될 때마다 useEffect 실행
-
-  return { data, isEnd, loadingRef, error };
+  }, [loadingRef, isEnd]);
+  return { data, pageNum, isEnd, loadingRef, error };
 };
 
 export default useInfiniteScroll;

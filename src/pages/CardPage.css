@@ -4,3 +4,27 @@
   max-width: 600px;
   margin: 0 auto;
 }
+
+.fixed-header {
+  position: fixed; /* 상단에 고정 */
+  top: 0; /* 상단에서의 거리 */
+  left: 0; /* 왼쪽에서의 거리 */
+  right: 0; /* 오른쪽에서의 거리 */
+  background-color: #f8f9fa; /* 배경 색상 */
+  padding: 10px; /* 패딩 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+  z-index: 1000; /* 다른 요소 위에 표시되도록 설정 */
+}
+
+.header-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-name {
+  padding: 10px;
+}
+.header-value {
+  padding: 10px 10px 15px 10px;
+}

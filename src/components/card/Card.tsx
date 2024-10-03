@@ -1,5 +1,5 @@
 import { MockData } from "../../types/mockData";
-import { formatDate } from "../../utils/getMockData";
+import { formatDate, formatPrice } from "../../utils/util";
 import "./Card.css";
 
 interface CardProps {
@@ -20,7 +20,7 @@ const Card: React.FC<CardProps> = ({ item }) => {
         </li>
         <li>
           <span className="name">가격</span>
-          <span className="value">{item.price}원</span>
+          <span className="value">{formatPrice(item.price)}</span>
         </li>
         <li>
           <span className="name">구매일</span>
